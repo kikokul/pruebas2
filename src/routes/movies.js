@@ -5,13 +5,16 @@ import movies from "../sample.json" assert { type: "json" };
 const router = new Router();
 
 router.get("/", (req, res) => {
+  console.log(req.body);
+  console.log(req.params);
   res.json(movies);
 });
 
 router.post("/", (req, res) => {
   const id = movies.length + 1;
   const { title, director, year, rating } = req.body;
-
+  console.log(req.body);
+  console.log(req.params);
   if (id && title && director && year && rating) {
     const newMovie = { ...req.body, id };
     movies.push(newMovie);
@@ -24,6 +27,9 @@ router.post("/", (req, res) => {
 router.put("/:id", (req, res) => {
   const { id } = req.params;
   const { title, director, year, rating } = req.body;
+  console.log('prueba');
+  console.log(req.body);
+  console.log(req.params);
   if (id && title && director && year && rating) {
     _.each(movies, (movie, i) => {
       if (movie.id === id) {
@@ -41,6 +47,8 @@ router.put("/:id", (req, res) => {
 
 router.delete("/:id", (req, res) => {
   const { id } = req.params;
+  console.log(req.body);
+  console.log(req.params);
   if (id) {
     _.each(movies, (movie, i) => {
       if (movie.id == id) {
