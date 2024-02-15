@@ -1,0 +1,11 @@
+git remote -v
+git remote remove origin
+git init
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/NOMBRE_USUARIO/NOMBRE_PROYECTO.git
+git push -u origin master
+-------
+git add agregar_archivo.txt
+git commit –m “Se agrega archivo agregar_archivo.txt”
+git push –u origin main o git push
